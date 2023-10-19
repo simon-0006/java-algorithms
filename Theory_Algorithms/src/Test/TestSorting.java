@@ -57,6 +57,21 @@ public class TestSorting {
 			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
 		}
 		
+		// Quick Sort Test algo 1
+		System.out.println("\nQuickSort");
+		
+		for(int j = 1; j<=2; j++) {
+			int count = 0;
+			int failure = 0;
+			
+			for(int i = startarraylength; i<= testcases; i++) {
+				int[] binary = quickSortTest(i, j);
+				if(IsSorted.array(binary) == true) {++count;}
+				else {++failure;}
+			}
+			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
+		}
+		
 	}
 		
 	// Array Generator
@@ -99,6 +114,22 @@ public class TestSorting {
 //		Arrays.sort(arr);
 		
 		return SelectionSort.algo1(arr);
+	} 
+	
+	public static int[] quickSortTest(int index, int algotest) {
+		int[] arr = randomintarr(index*2, 100);
+//		Arrays.sort(arr);
+		
+		if(algotest == 1) {
+			return QuickSort.algo1_rekursiv(arr, 0, arr.length-1);
+		}
+		else if(algotest == 2) {
+			return QuickSort.algo2_randomisiert(arr, 0, arr.length-1);
+		}
+		
+		return arr;
+		
 	}
+	
 	
 }
