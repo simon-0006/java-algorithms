@@ -1,154 +1,138 @@
 package Test;
 import SortingAlgorithms.*;
 
-import java.util.Arrays;
+import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.Random;
 
-public class TestSorting {
+import org.junit.jupiter.api.Test;
+import Datastructures.*;
+
+class SortingJUnit {
+	int startarraylength = 1;
+	int testcases = 100;
 	
-	public static void main(String[] args) {
-		
-		// for all testcases
-		int startarraylength = 1;
-		int testcases = 100;
-		
-		// Bubble Sort Test algo 1
-		System.out.println("Bubble Sort");
+	int count, failure;
+
+	@Test
+	public void bubbleSort() {
 		
 		for(int j = 1; j<=1; j++) {
-			int count = 0;
-			int failure = 0;
+			count = 0; failure = 0;
 			
 			for(int i = startarraylength; i<= testcases; i++) {
 				int[] binary = bubbleSortTest(i, j);
 				if(IsSorted.array(binary) == true) {++count;}
 				else {++failure;}
 			}
-			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
+//			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
+			assertTrue(count == testcases);
 		}
-		
-		// Insertion Sort Test algo 1
-		System.out.println("\nInsertion Sort");
+	}
+	
+	@Test
+	public void insertionSort() {
 		
 		for(int j = 1; j<=1; j++) {
-			int count = 0;
-			int failure = 0;
+			count = 0; failure = 0;
 			
 			for(int i = startarraylength; i<= testcases; i++) {
 				int[] binary = insertionSortTest(i, j);
 				if(IsSorted.array(binary) == true) {++count;}
 				else {++failure;}
 			}
-			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
+//			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
+			assertTrue(count == testcases);
 		}
-		
-		// Selection Sort Test algo 1
-		System.out.println("\nSelection Sort");
+	}
+	
+	@Test
+	public void selectionSort() {
 		
 		for(int j = 1; j<=1; j++) {
-			int count = 0;
-			int failure = 0;
+			count = 0; failure = 0;
 			
 			for(int i = startarraylength; i<= testcases; i++) {
 				int[] binary = selectionSortTest(i, j);
 				if(IsSorted.array(binary) == true) {++count;}
 				else {++failure;}
 			}
-			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
+//			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
+			assertTrue(count == testcases);
 		}
-		
-		// Quick Sort Test algo 1
-		System.out.println("\nQuickSort");
+	}
+	
+	@Test
+	public void quickSort() {
 		
 		for(int j = 1; j<=2; j++) {
-			int count = 0;
-			int failure = 0;
+			count = 0; failure = 0;
 			
 			for(int i = startarraylength; i<= testcases; i++) {
 				int[] binary = quickSortTest(i, j);
 				if(IsSorted.array(binary) == true) {++count;}
 				else {++failure;}
 			}
-			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
+//			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
+			assertTrue(count == testcases);
 		}
-		
-		// Merge Sort Test algo 1
-		System.out.println("\nMergeSort");
+	}
+	
+	@Test
+	public void mergeSort() {
 		
 		for(int j = 1; j<=1; j++) {
-			int count = 0;
-			int failure = 0;
+			count = 0; failure = 0;
 			
 			for(int i = startarraylength; i<= testcases; i++) {
 				int[] binary = mergeSortTest(i, j);
 				if(IsSorted.array(binary) == true) {++count;}
 				else {++failure;}
 			}
-			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
+//			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
+			assertTrue(count == testcases);
 		}
-		System.out.println("Algo 2 (straight) noch nicht korrekt");
-				
-		// Heap Sort Test algo 1
-		System.out.println("\nHeap Sort");
+	}
+	
+	@Test
+	public void heapSort() {
 		
-		for(int j = 1; j<=1; j++) {
-			int count = 0;
-			int failure = 0;
+		for(int j = 1; j<=2; j++) {
+			count = 0; failure = 0;
 			
 			for(int i = startarraylength; i<= testcases; i++) {
 				int[] binary = heapSortTest(i, j);
 				if(IsSorted.array(binary) == true) {++count;}
 				else {++failure;}
 			}
-			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
+//			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
+			assertTrue(count == testcases);
 		}
 	}
-		
-	// Array Generator
-	public static int[] randomintarr(int length, int limit) {
-		Random generator = new Random();
-		
-		int[] arr = new int[length];
-		
-		for(int i = 0; i < length; i++) {
-			arr[i] = generator.nextInt() % limit;
-		}
-		
-		return arr;
-		
-	}
-		
-	// Sorting Algorithms
+	
+	
+	//-----------------------------------------------------------------------------------------------------------------------------------
+	
 	public static int[] bubbleSortTest(int index, int algotest) {
 		int[] arr = randomintarr(index*2, 100);
-//		Arrays.sort(arr);
-		
-		
-		// Algo 1
-//		if(algotest == 1) {algotest = BubbleSort.algo1(arr);} 
-		
-//		if(arr[index] == arr[algotest]) {return true;}
 		
 		return BubbleSort.algo1(arr);
 	}
 	
 	public static int[] insertionSortTest(int index, int algotest) {
 		int[] arr = randomintarr(index*2, 100);
-//		Arrays.sort(arr);
 		
 		return InsertionSort.algo1(arr);
 	}
 	
 	public static int[] selectionSortTest(int index, int algotest) {
 		int[] arr = randomintarr(index*2, 100);
-//		Arrays.sort(arr);
 		
 		return SelectionSort.algo1(arr);
 	} 
 	
 	public static int[] quickSortTest(int index, int algotest) {
 		int[] arr = randomintarr(index*2, 100);
-//		Arrays.sort(arr);
 		
 		if(algotest == 1) {
 			return QuickSort.algo1_rekursiv(arr, 0, arr.length-1);
@@ -163,7 +147,6 @@ public class TestSorting {
 	
 	public static int[] mergeSortTest(int index, int algotest) {
 		int[] arr = randomintarr(index*2, 100);
-//		Arrays.sort(arr);
 		
 		if(algotest == 1) {
 			return Mergesort.algo1_rekursiv(arr, 0, arr.length-1);
@@ -178,9 +161,27 @@ public class TestSorting {
 	
 	public static int[] heapSortTest(int index, int algotest) {
 		int[] arr = randomintarr(index*2, 100);
-//		Arrays.sort(arr);
 		
 		return Heapsort.algo1(arr);
 	
 	}
+
+	//-----------------------------------------------------------------------------------------------------------------------------------
+
+	
+	// Array Generator
+	public static int[] randomintarr(int length, int limit) {
+		Random generator = new Random();
+		
+		int[] arr = new int[length];
+		
+		for(int i = 0; i < length; i++) {
+			arr[i] = generator.nextInt() % limit;
+		}
+		
+		return arr;
+		
+	}
+	
+
 }

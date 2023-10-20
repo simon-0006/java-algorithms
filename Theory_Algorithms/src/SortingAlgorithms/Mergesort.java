@@ -3,10 +3,6 @@ package SortingAlgorithms;
 import java.util.Arrays;
 
 public class Mergesort {
-	public static void main(String[] args) {
-		int[] test = {1, 6, 8, 2, 5, 9, 6, 3, 2,1 ,5 ,2, 4};
-		System.out.println(Arrays.toString(algo2_straight(test)));
-	}
 	
 	public static int[] algo1_rekursiv(int[] arr, int left, int right) {
 		

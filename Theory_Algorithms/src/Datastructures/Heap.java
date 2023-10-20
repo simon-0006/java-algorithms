@@ -8,6 +8,8 @@ public class Heap {
 	
 	public Heap(int[] arr) {heap = arr;}
 	
+	public int[] heaparr() {return heap;}
+	
 	public static void main(String[] args) {
 		int[] test = {3,5,2,8,7,9,5,3,2,6,8,6,1,1};
 		Heap binTree = new Heap(test);

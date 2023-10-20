@@ -1,67 +1,67 @@
 package Test;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 import java.util.Arrays;
 import java.util.Random;
 
-import javax.swing.text.html.HTMLDocument.HTMLReader.IsindexAction;
+import org.junit.jupiter.api.Test;
 
-import SearchAlgorithms. *;
-import SortingAlgorithms.*;
+class SearchingJUnit {
+	int startarraylength = 1;
+	int testcases = 100;
+	
+	int count, failure;
 
-public class TestSearching {
-
-	public static void main(String[] args) {
-		
-		// for all testcases
-		int startarraylength = 1;
-		int testcases = 100;
-		
+	@Test
+	void binarySearch() {
 		// Binary Test algo 1
-		System.out.println("Binary Search");
 		
 		for(int j = 1; j<=2; j++) {
-			int count = 0;
-			int failure = 0;
+			count = 0;
+			failure = 0;
 			
 			for(int i = startarraylength; i<= testcases; i++) {
 				boolean binary = binaryTest(i, j);
 				if(binary == true) {count++;}
 				else {failure++;}
 			}
-			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
+			assertTrue(count == testcases);
 		}
-		
-		// Interpolation Search
-		System.out.println("\nInterpolation Search:");
+	}
+	
+	@Test
+	void interpolationSearch() {
+		// Binary Test algo 1
 		
 		for(int j = 1; j<=2; j++) {
-			int count = 0;
-			int failure = 0;
+			count = 0;
+			failure = 0;
 			
 			for(int i = startarraylength; i<= testcases; i++) {
 				boolean binary = interpolationTest(i, j);
 				if(binary == true) {count++;}
 				else {failure++;}
 			}
-			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
+			assertTrue(count == testcases);
 		}
-		
-		// Exponential Search
-		System.out.println("\nExponential Search:");
+	}
+	
+	@Test
+	void exponentialSearch() {
+		// Binary Test algo 1
 		
 		for(int j = 1; j<=2; j++) {
-			int count = 0;
-			int failure = 0;
+			count = 0;
+			failure = 0;
 			
 			for(int i = startarraylength; i<= testcases; i++) {
 				boolean binary = exponentialTest(i, j);
 				if(binary == true) {count++;}
 				else {failure++;}
 			}
-			System.out.println("Algotest " + j + " : " + count + " - richtig | falsch - " + failure);
+			assertTrue(count == testcases);
 		}
-		
-		
-		
 	}
 	
 	// Array Generator
@@ -124,4 +124,5 @@ public class TestSearching {
 		
 		return false;
 	}
+
 }
