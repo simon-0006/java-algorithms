@@ -12,6 +12,7 @@ public class Heap {
 		int[] test = {3,5,2,8,7,9,5,3,2,6,8,6,1,1};
 		Heap binTree = new Heap(test);
 		Heap binTree2 = new Heap(test);
+		Heap binTree3 = new Heap(test);
 		System.out.println(Arrays.toString(binTree.heap));
 		
 		
@@ -21,7 +22,12 @@ public class Heap {
 		
 		binTree2.buildMinHeap();
 		System.out.println(Arrays.toString(binTree2.heap));
-		System.out.println(binTree.hasMinHeapHeapProperty());
+		System.out.println(binTree2.hasMinHeapHeapProperty());
+		
+		binTree3.heapSort();
+		System.out.println(Arrays.toString(binTree3.heap));
+		System.out.println(binTree3.hasMinHeapHeapProperty());
+		
 	}
 	
 	public boolean hasMaxHeapProperty() {
@@ -103,6 +109,28 @@ public class Heap {
 		for(int i = heap.length/2; i >= 0; i--) {
 			minHeapify(i);
 		}
+	}
+	
+	public void heapSort() {
+		
+		buildMinHeap();
+		int[] sorted = Arrays.copyOf(heap, heap.length);
+		
+		for(int i = 0; i < sorted.length; i ++) {
+			
+			if(heap.length == 1) {sorted[i] = heap[0];}
+			else {
+				sorted[i] = heap[0];
+				heap[0] = heap[heap.length-1];
+				heap = Arrays.copyOf(heap, heap.length-1);
+				
+				minHeapify(0);
+			}
+			
+		}
+		
+		heap = sorted.clone();
+		
 	}
 	
 }
