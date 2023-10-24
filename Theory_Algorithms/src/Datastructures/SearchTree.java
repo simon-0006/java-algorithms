@@ -1,5 +1,25 @@
 package Datastructures;
 
-public class SearchTree {
+import AbstractDataTypes.*;
 
+public class SearchTree<T> implements Dictionnary<T>{
+
+	@Override
+	public void insert(T key) throws IllegalArgumentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(T key) throws IllegalArgumentException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void search(T key) throws IllegalArgumentException {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }
