@@ -17,9 +17,9 @@ public class SearchTree<T> implements Dictionnary<T>{
 	}
 
 	@Override
-	public void search(T key) throws IllegalArgumentException {
+	public boolean search(T key) {
 		// TODO Auto-generated method stub
-		
+		return false;
 	}
 	
 }

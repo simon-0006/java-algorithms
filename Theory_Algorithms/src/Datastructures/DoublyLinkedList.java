@@ -58,4 +58,22 @@ public class DoublyLinkedList<T> implements MultiStack<T>, PriorityQueue<T>, Que
 		
 	}
 
+	@Override
+	public void insert(T item, int p) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public T extractMax() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public T multiPop(int k) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
