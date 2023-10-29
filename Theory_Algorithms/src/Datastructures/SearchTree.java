@@ -18,7 +18,7 @@ public class SearchTree<T> implements Dictionnary<T>{
 
 	@Override
 	public boolean search(T key) {
-		// TODO Auto-generated method stub
+		
 		return false;
 	}
 	

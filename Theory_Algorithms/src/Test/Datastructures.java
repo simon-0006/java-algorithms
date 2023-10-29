@@ -1,4 +1,5 @@
 package Test;
+
 import Datastructures.*;
 
 public class Datastructures {
@@ -13,7 +14,6 @@ public class Datastructures {
 			ml.pop();
 			ml.isEmpty();
 			ml.emptyStack();
-			System.out.println(ml.toString());
 			
 		}
 }
