@@ -85,7 +85,8 @@ public class DoublyLinkedList<T> implements MultiStack<T>, PriorityQueue<T>, Que
 		if (isEmpty()) {
 			this.head = new_node; 
 			this.tail = new_node;
-			this.tail.ref = new Node[2];}
+			this.tail.ref = new Node[2];
+			this.head.ref[1] = this.tail;}
 		else {
 			new_node.ref = new Node[2];
 			
@@ -143,23 +144,9 @@ public class DoublyLinkedList<T> implements MultiStack<T>, PriorityQueue<T>, Que
 	}
 	// TODO return all the elements: maybe in a list?
 
-	//	TODO Dictionnary ----------------------------------------------------------------------------------------------------------
+	//	maybe Dictionnary makes not much sense to combine stack with dictionnary ----------------------------------------------------------------------------------------------------------
 	@Override
 	public void insert(T key) throws IllegalArgumentException {
-		Node<T> new_node = new Node<T>(key);
-		
-		if (isEmpty()) {
-			this.head = new_node; 
-			this.tail = new_node;
-			this.tail.ref = new Node[2];}
-		else {
-			new_node.ref = new Node[2];
-			new_node.ref[1] = this.tail;
-			tail.ref[0] = new_node;
-			tail = new_node;
-			
-			head.ref[1] = new_node;
-		}
 		
 	}
 

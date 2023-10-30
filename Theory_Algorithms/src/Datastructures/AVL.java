@@ -1,5 +1,5 @@
 package Datastructures;
 
-public class AVL<T> extends SearchTree<T>{
+public class AVL<T> extends SearchTree{
 	
 }

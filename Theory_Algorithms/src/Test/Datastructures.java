@@ -28,10 +28,6 @@ public class Datastructures {
 			DoublyLinkedList<Integer> dll = new DoublyLinkedList<>();
 			System.out.println(dll.toString());
 			
-			dll.insert(78);
-			dll.insert(5);
-			dll.insert(90);
-			dll.insert(11);
 			dll.push(89);
 			dll.push(12);
 			
@@ -59,7 +55,24 @@ public class Datastructures {
 			System.out.println(dll.toString());
 			
 			dll.multiPop(5);
-			System.out.println(dll.toString());
+			System.out.println(dll.toString() + "\n");
+			
+			SearchTree mB = new SearchTree();
+			mB.insert(25);
+			mB.insert(12);
+			mB.insert(50);
+			mB.insert(11);
+			mB.insert(8);
+			mB.insert(2);
+			mB.insert(1);
+			mB.insert(27);
+			
+			System.out.println(mB.toString());
+			
+			System.out.println(mB.search(25));
+			System.out.println(mB.search(1));
+			System.out.println(mB.search(27));
+			System.out.println(mB.search(28));
 			
 			
 			
