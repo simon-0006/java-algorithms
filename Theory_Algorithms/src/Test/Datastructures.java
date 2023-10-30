@@ -58,21 +58,27 @@ public class Datastructures {
 			System.out.println(dll.toString() + "\n");
 			
 			SearchTree mB = new SearchTree();
-			mB.insert(25);
-			mB.insert(12);
-			mB.insert(50);
-			mB.insert(11);
 			mB.insert(8);
+			mB.insert(6);
+			mB.insert(9);
+			mB.insert(5);
+			mB.insert(7);
+			mB.insert(11);
 			mB.insert(2);
-			mB.insert(1);
-			mB.insert(27);
+			mB.insert(3);
+			mB.insert(10);
+			mB.insert(12);
+			
+			System.out.println(mB.toString());
+
+			mB.delete(8);
+			
+			System.out.println(mB.toString());
+
+			mB.delete(9);
 			
 			System.out.println(mB.toString());
 			
-			System.out.println(mB.search(25));
-			System.out.println(mB.search(1));
-			System.out.println(mB.search(27));
-			System.out.println(mB.search(28));
 			
 			
 			
