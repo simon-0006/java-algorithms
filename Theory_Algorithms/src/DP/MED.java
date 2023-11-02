@@ -4,9 +4,9 @@ public class MED { // minimal Editing distance
 	
 	public static void main(String[] args) {
 		
-		String str1 = "Tiger";
-		String str2 = "Ziege";
-		System.out.println(editierDistanz(str1, str2));
+		String str1 = "search";
+		String str2 = "sort";
+		System.out.println("anzahl editier operationen " + editierDistanz(str1, str2));
 	}
 	
 	public static int editierDistanz(String s1, String s2) {
@@ -26,6 +26,13 @@ public class MED { // minimal Editing distance
 				}
 				
 			}
+		}
+		
+		for (int[] i: dpTable) {
+			for(int j: i) {
+				System.out.print(j + " ");
+			}
+			System.out.print("\n");
 		}
 		
 		return dpTable[m][n];
