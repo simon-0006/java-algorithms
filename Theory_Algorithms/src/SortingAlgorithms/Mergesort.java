@@ -16,6 +16,7 @@ public class Mergesort {
 		return arr;
 	}
 	
+	// Doesn't work properly! Doesn't really figured out what the problem is
 	public static int[] algo2_straight(int[] arr) {
 		int len = 1;
 		int l, m;
